@@ -1,4 +1,4 @@
-Nifty 50 Sentiment Engine: Integrated Market Analytics & NLP
+#### Nifty 50 Sentiment Engine: Integrated Market Analytics & NLP
 A sophisticated financial analytics framework that bridges the gap between quantitative technical indicators and qualitative market narratives. By synthesizing 250 days of trading data with Natural Language Processing, this engine provides deep insights into the drivers of the Nifty 50 index.
 
 🚀 Executive Summary
