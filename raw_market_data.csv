@@ -1,0 +1,251 @@
+Date,Nifty_Close,India_VIX,FII_Net (Cr),DII_Net (Cr),PCR,News_Headline,BERT_Sentiment
+2025-01-01,24000.0,19.0,-404,-322,0.9837,"India corporate bond market sees ₹9,200 Cr issuances this week",0
+2025-01-02,23979.0,17.41,473,-474,1.0591,India renewable energy capacity crosses 250 GW milestone,1
+2025-01-03,24118.61,18.56,1692,-1237,1.0194,India container throughput at ports up 12% YoY: ministry data,1
+2025-01-04,24440.2,21.06,408,-472,0.9531,"Wipro beats estimates, stock rallies 6.1% in morning trade",1
+2025-01-05,24398.92,22.05,179,646,0.8831,"India PMI manufacturing at 53.8, in-line with consensus forecast",0
+2025-01-06,24357.72,19.9,-549,-28,1.0123,Nifty Realty consolidates near 52-week high; sector factors priced in,0
+2025-01-07,24694.29,19.17,999,1067,0.9648,"US tariff threat on Indian pharma exports, sector falls 3.1%",-1
+2025-01-08,24863.36,20.6,287,318,1.0464,Sebi board meeting to address F&O regulations; market on hold,0
+2025-01-09,24771.77,19.54,-866,682,0.9993,Nifty Pharma down 2.1% as US FDA sends warning letter to firm,-1
+2025-01-10,24893.74,19.95,491,-450,1.0552,IT major mid-quarter update shows steady but unspectacular growth,0
+2025-01-11,24803.32,20.72,-841,929,0.8766,Hero MotoCorp sales beat estimates; two-wheeler stocks rally,1
+2025-01-12,24712.74,19.39,-182,-6,1.0789,"Bajaj Finance Q4 AUM growth at 28%, NBFC sector leads gains",1
+2025-01-13,24771.05,19.21,192,175,0.9419,Nifty Chemical index gains on China+1 supply chain shift,0
+2025-01-14,24378.77,15.22,-1646,2221,1.1073,"FII sell-off: ₹5,800 Cr exits equity market in single session",-1
+2025-01-15,24031.15,14.21,-1896,1005,0.7604,Maruti Suzuki Q4 EBITDA margins surprise positively at 13.2%,1
+2025-01-16,23923.74,14.21,-768,1120,1.0515,Global recession fears trigger broad-based selling across sectors,-1
+2025-01-17,23725.78,13.02,-329,-4,0.849,"Large-cap MF inflows at ₹8,300 Cr in June, stable momentum",0
+2025-01-18,23796.38,15.38,580,-78,0.7825,"Global tech selloff drags Infosys, TCS down 3-5% each",-1
+2025-01-19,23620.51,13.87,-1285,1664,0.78,Nifty FMCG sector flat; awaiting rural volume growth trend data,0
+2025-01-20,23345.65,13.67,-1042,355,0.7966,India Q1 corporate revenue growth at 11.3% YoY beat estimates,-1
+2025-01-21,23645.4,14.17,1652,363,0.8934,India-Vietnam trade corridor investment signals boost logistics stocks,0
+2025-01-22,23607.15,16.21,-1154,1073,0.9359,Nifty FMCG up 1.6% as rural wage growth outpaces urban,-1
+2025-01-23,23627.79,14.63,408,-265,0.7806,"India trade deficit at record $25 Bn, rupee hits 8-month low",-1
+2025-01-24,23350.38,16.3,-1509,1195,0.8716,India direct tax buoyancy in line with trend; no major surprises,0
+2025-01-25,23249.56,16.45,-65,716,1.1338,NSE index derivatives turnover normalises post margin rule changes,0
+2025-01-26,23278.47,15.4,-341,664,1.0683,"Reliance Industries Q4 profit up 18% YoY, triggers broad market rally",1
+2025-01-27,23058.75,16.16,-1975,304,0.9248,"India hotel sector occupancy at record 78%, tourism stocks surge",1
+2025-01-28,23139.45,16.55,-648,128,0.8828,"Nifty IT index outperforms as rupee weakens, USD revenues boost",1
+2025-01-29,23028.52,15.95,-423,267,0.8837,India fertiliser sector stocks rally on policy subsidy clarity,1
+2025-01-30,22978.39,16.2,-49,185,0.9466,Nifty Midcap 100 gains 2.2% as domestic mutual funds pour in,1
+2025-01-31,22868.03,15.88,-996,959,0.7455,Nifty500 corrects 2.3% in week as FIIs turn sellers again,-1
+2025-02-01,23237.89,16.19,1893,-563,0.842,"FPIs pull out ₹18,000 Cr in October amid global risk-off mood",-1
+2025-02-02,23242.2,17.13,-979,-27,0.6867,India 91-day T-Bill yield steady at 6.45% at weekly auction,0
+2025-02-03,23041.09,19.1,-858,776,0.9644,"IT sector jumps on strong TCS quarterly guidance, Nifty IT up 2.5%",1
+2025-02-04,23209.71,17.53,-40,523,0.9706,India industrial output contracts 0.4% in December MoM,-1
+2025-02-05,22977.0,20.13,-1340,1083,0.874,"Budget capex multiplier effect felt across cement, steel sectors",1
+2025-02-06,23024.73,17.62,224,640,1.0832,"FII holding in Nifty50 stocks at 22.3%, stable over past month",0
+2025-02-07,22651.17,17.47,-2056,1542,0.745,Nifty Energy up 2.9% as ONGC reports strong refining margins,1
+2025-02-08,22403.61,18.22,-1265,999,0.7276,Q2 earnings season begins; sector analysts adopt wait-and-watch stance,0
+2025-02-09,22447.86,18.54,789,-190,0.935,Nifty Listed Private Equity index outperforms on M&A activity,1
+2025-02-10,22595.99,17.75,273,-753,1.0219,"Market breadth weak: 1,620 declines vs 380 advances on NSE",-1
+2025-02-11,22635.72,17.52,667,115,1.0949,Nifty Consumer discretionary up 2.1% on wedding season demand,0
+2025-02-12,22620.26,16.97,-742,638,0.8295,India railway sector allocation doubled; infra stocks in focus,-1
+2025-02-13,22569.21,16.35,105,289,1.0047,Nifty Midcap index underperforms as global risk appetite weakens,-1
+2025-02-14,22294.03,17.5,-290,-308,0.8879,India rating upgraded to BBB+ outlook positive by Fitch Ratings,1
+2025-02-15,22164.68,17.97,-2031,573,0.8788,Nifty PSE index at record high on divestment target revision,1
+2025-02-16,22084.69,17.14,-818,1095,0.9931,"RBI raises CRR by 50 bps, banking stocks fall sharply",-1
+2025-02-17,22290.71,18.29,1220,-369,0.9826,"Asian Paints volume growth beats forecast, consumer sector up",1
+2025-02-18,22362.62,18.64,181,459,0.7204,Nifty CPSE ETF subscription oversubscribed 4x in latest tranche,1
+2025-02-19,22036.61,19.56,-1160,736,1.1006,"India credit growth at 14.2% YoY, broadly in line with RBI target",0
+2025-02-20,22104.03,20.19,-75,249,1.0985,"India e-commerce GMV grows 34% YoY, retail sector stocks jump",1
+2025-02-21,22038.41,19.02,-228,772,0.8402,Auto stocks rally as vehicle sales post record February numbers,1
+2025-02-22,21918.54,18.27,-607,215,0.9515,Nifty up 260 points as IIP data beats consensus by wide margin,1
+2025-02-23,22039.41,19.15,1218,-300,0.9765,Nifty MNC index outperforms on strong global parent guidance,1
+2025-02-24,22240.07,19.79,1006,-484,0.9581,FMCG sector outperforms on robust rural demand recovery data,1
+2025-02-25,22423.54,19.62,976,-456,0.8583,"DII buying of ₹1,200 Cr broadly offsets modest FII selling today",0
+2025-02-26,22270.83,19.63,-890,446,0.8439,"India trade data mixed: exports up 3.1%, imports up 4.6%",0
+2025-02-27,22219.04,21.03,-512,541,0.9424,"Nifty50 sees highest single-day FII buying of ₹7,200 Cr",1
+2025-02-28,22288.38,20.08,34,-55,1.0719,Nifty Smallcap 250 rises 2.6% as domestic flows pick up,1
+2025-03-01,22480.71,20.57,1045,358,1.0038,"Nifty50 year-to-date return at +12.4%, beats EM peer average",1
+2025-03-02,22396.05,20.12,-608,26,0.8873,"Market breadth strong as 1,850 stocks advance on NSE today",1
+2025-03-03,22367.44,19.69,54,82,1.018,India corporate profit-to-GDP ratio highest in a decade,1
+2025-03-04,22164.73,20.87,388,-194,0.6012,Nifty IT and Pharma trade in narrow bands; no trigger in view,0
+2025-03-05,21947.09,21.63,-406,1106,1.0923,Nifty IT down 4.2% on major US layoff announcements at IT firms,-1
+2025-03-06,22105.82,22.32,483,81,0.756,"PSU banks hold gains from prior session, await RBI credit data",0
+2025-03-07,22368.84,23.54,1834,-109,0.9396,Nifty Diversified Banks index up 2.7% on CASA ratio improvement,1
+2025-03-08,22361.86,23.12,-274,-419,0.8424,Nifty50 gains 310 points in final hour on short-covering rally,1
+2025-03-09,22560.19,23.53,-392,510,0.8276,GST collection tops ₹2.1 lakh Cr for third consecutive month,1
+2025-03-10,22636.43,22.72,-287,774,1.1101,India LNG terminal capacity expansion boosts energy security,0
+2025-03-11,22519.4,22.73,-1610,966,0.9148,Nifty Realty drops 3.5% on rising mortgage rate expectations,-1
+2025-03-12,22595.46,22.2,106,685,1.0046,Nifty50 September futures at 85-point premium; bullish rollover,0
+2025-03-13,22899.67,21.98,1270,-630,0.9541,"HDFC Bank shares up 4% post Q3 results, NPA at record low",1
+2025-03-14,22899.57,22.38,1005,452,1.0229,Cement sector falls 2.4% on demand slowdown in northern states,-1
+2025-03-15,23213.12,21.05,1476,685,0.955,India budget session begins; markets watch for fiscal roadmap,0
+2025-03-16,22708.74,23.32,-2199,1008,0.8258,"India core sector output rises 7.8%, Nifty defies global weakness",1
+2025-03-17,22874.8,21.69,1183,-555,1.0749,India semiconductor wafer fab PLI scheme attracts 6 major bids,1
+2025-03-18,22898.6,19.94,-1229,1480,0.8698,India telecom stocks tumble on AGR dues ruling uncertainty,-1
+2025-03-19,22847.33,21.17,-70,1021,0.7608,China slowdown threatens India exports; auto and metal sectors fall,-1
+2025-03-20,22872.02,21.87,564,-315,0.9067,"Nifty IT Q4 revenue growth at 8.2% CC, above 7.5% estimate",1
+2025-03-21,22495.61,22.31,-2449,1092,1.1447,"Nifty Bank consolidates above 51,000; sector investors stay neutral",0
+2025-03-22,22460.38,22.72,539,-183,1.0728,SEBI approves new SME IPO norms boosting retail investor confidence,1
+2025-03-23,22535.42,22.33,517,-705,0.9231,Nifty50 flat in early trade as mixed global cues keep market cautious,0
+2025-03-24,22827.14,20.91,961,-692,0.9017,"Foreign portfolio inflows hit ₹12,000 Cr in a single session",1
+2025-03-25,22733.62,20.77,-7,-299,0.903,Nifty trades sideways as FII and DII flows largely offset each other,0
+2025-03-26,22584.7,19.74,744,-519,1.1753,"India urban unemployment falls to 6.8%, consumption outlook positive",1
+2025-03-27,22495.33,20.77,-264,301,0.9874,Nifty Consumer Durables falls 2.6% on weak urban demand data,-1
+2025-03-28,22677.85,20.37,909,-92,0.9872,"India corporate issuance of green bonds crosses ₹80,000 Cr",-1
+2025-03-29,22748.13,19.19,16,968,1.0415,Nifty50 premium to EM valuation narrows as earnings catch up,0
+2025-03-30,22652.72,18.71,-905,108,0.9393,Bank NPAs rise in PSU segment; lenders down 2-4% across board,-1
+2025-03-31,22758.59,19.15,937,271,0.8862,India-US bilateral trade talks progress slowly; no immediate impact,0
+2025-04-01,22784.21,18.38,-408,277,0.8821,India retail inflation lowest since May 2023 at 3.9%,1
+2025-04-02,22979.47,17.36,846,-205,0.8818,India-UK free trade agreement progress boosts pharma and IT,1
+2025-04-03,22849.6,17.7,-820,906,0.891,"India electricity generation crosses 2,000 BU in FY2025",1
+2025-04-04,22792.89,18.02,53,-385,0.9876,Nifty500 Value 50 index outperforms growth index in Q2,1
+2025-04-05,22723.87,17.41,-85,429,0.8974,"India PMI composite at 60.5, signals broad economic expansion",1
+2025-04-06,22449.67,16.89,-520,517,0.9713,"India manufacturing PMI at 57.3, highest in 14 months",1
+2025-04-07,22513.0,17.26,-41,465,0.8792,Nifty Metal index plunges 3.7% on China steel dumping fears,-1
+2025-04-08,22569.78,15.58,75,311,0.8731,Nifty500 unchanged ahead of index rebalancing effective month-end,0
+2025-04-09,22577.53,14.08,-555,1677,0.6014,India new home sales up 18% QoQ on lower mortgage rates,1
+2025-04-10,22539.32,13.53,-426,73,0.9429,Markets unchanged as investors digest mixed corporate earnings,0
+2025-04-11,22276.46,13.63,-878,330,0.876,"UltraTech Cement Q3 margins expand, infrastructure rally continues",1
+2025-04-12,22203.61,14.35,146,-177,0.965,India business confidence survey hits 5-year high: FICCI data,1
+2025-04-13,22145.67,16.41,-799,282,0.5286,"India IT hiring improves marginally, signals sector recovery",0
+2025-04-14,22001.76,17.57,-92,-77,1.1442,"Nifty50 holds key support at 24,000 as volumes remain thin",0
+2025-04-15,21978.21,17.41,713,474,0.8744,Sun Pharma US generics pipeline gets 3 ANDA approvals,1
+2025-04-16,22060.44,17.43,600,640,1.0244,Nifty Mid Small IT index up 4.2% on SaaS segment deal wins,1
+2025-04-17,22423.7,16.27,2663,-1284,0.7493,India forex reserves hit all-time high of $712 billion,1
+2025-04-18,22463.74,16.39,-296,-83,0.9494,NBFC liquidity tightens; market-wide risk aversion rises,-1
+2025-04-19,22519.73,16.17,-513,667,0.7461,India textile sector gets boost from EU trade agreement news,-1
+2025-04-20,22512.24,16.7,-1099,418,0.8056,Crude oil spike to $98 pushes OMC stocks to 52-week lows,-1
+2025-04-21,22154.7,15.81,-609,791,1.0968,India's ease of doing business ranking improves to 63rd globally,1
+2025-04-22,22156.35,16.61,400,121,0.8563,Nifty Healthcare index rallies 3.1% on domestic sector optimism,1
+2025-04-23,22174.35,18.56,43,-577,0.9345,Nifty500 gains 1.4% as RBI increases FPI debt investment limit,1
+2025-04-24,22650.32,18.38,2167,-1,1.0101,"US yield inversion deepens, triggering emerging market outflows",-1
+2025-04-25,22620.1,18.83,-801,1458,0.9719,India WPI inflation stable at 2.1%; no major reaction in bonds,0
+2025-04-26,22684.96,19.59,1737,-888,0.9419,"India inflation surges to 6.7%, above RBI tolerance band",-1
+2025-04-27,22685.07,18.98,78,-29,0.9585,Nifty50 weekly options writing attracts institutional interest,0
+2025-04-28,22467.58,19.17,-841,721,1.206,India Q4 FY25 trade surplus in services at $17.2 Bn record,1
+2025-04-29,22693.7,19.09,1378,-253,0.9094,"DIIs average buying of ₹4,800 Cr/day in July, highest this year",1
+2025-04-30,22846.06,19.12,918,116,0.9409,Sensex surges to all-time high on strong corporate earnings season,1
+2025-05-01,23007.09,18.1,795,847,1.0276,Nifty PSU Bank index down 3.8% on rising NPA disclosure concerns,-1
+2025-05-02,22836.79,18.12,-1174,640,1.0345,India capital goods sector up 3.1% on order inflow visibility,1
+2025-05-03,23117.65,18.71,1433,-844,1.0531,"India Q3 GDP growth at 7.4%, beats all analyst estimates",1
+2025-05-04,22850.68,20.39,36,-506,1.0125,Nifty Financial Services index hits new record on NBFC reforms,1
+2025-05-05,22971.84,21.35,1305,-753,0.8131,"India power demand growth at 6.1% YoY, in-line with forecasts",0
+2025-05-06,23410.58,23.67,2737,-1048,1.1811,India fintech payment volumes cross ₹20 lakh Cr monthly,0
+2025-05-07,23221.27,22.3,-1071,1579,0.8269,"Coal India dividend of ₹25/share announced, PSU stocks surge",1
+2025-05-08,23116.7,23.0,-1019,400,1.0113,Markets await US FOMC meeting minutes for next direction cue,0
+2025-05-09,23143.23,22.82,32,297,0.8818,Nifty PSU Bank index up 4.2% on strong asset quality numbers,1
+2025-05-10,23051.31,25.06,-341,345,0.9982,Paytm shares hit circuit down; fintech sector under pressure,-1
+2025-05-11,22756.3,23.53,-556,1044,1.0224,India fiscal deficit at 76% of target in just 7 months,-1
+2025-05-12,22776.4,22.08,-932,1883,0.9998,India bond market awaits large government bond auction outcome,0
+2025-05-13,22578.44,21.03,96,-109,0.9961,Nifty REIT index up 2.3% on strong office leasing demand,0
+2025-05-14,22676.32,18.24,312,-185,1.0972,Nifty50 Q3 earnings growth estimated at 14% YoY: analyst poll,-1
+2025-05-15,22506.54,17.59,-963,1155,0.9483,"India services PMI at 59.1, highest reading in two years",1
+2025-05-16,22811.86,16.71,661,243,0.8514,"Nifty Bank crosses 52,000 for first time on credit growth data",1
+2025-05-17,22667.29,16.99,-1591,1839,1.0005,India aviation stocks soar as passenger traffic hits peak,0
+2025-05-18,22612.11,17.48,264,373,1.0349,"DII buying of ₹3,400 Cr cushions market on FII selling day",1
+2025-05-19,22775.84,19.77,723,-305,0.7792,"India's fiscal deficit FY2025 final at 5.1%, better than target",1
+2025-05-20,22545.56,20.77,-1730,1274,1.0132,Nifty50 range-bound session; global cues awaited for direction,0
+2025-05-21,22595.97,19.86,-567,1010,1.012,LIC dividend surprise of ₹6/share drives PSU insurance rally,1
+2025-05-22,22855.28,18.63,872,218,0.8737,"Nifty50 crosses 25,000 for first time this quarter",0
+2025-05-23,22551.88,19.17,-256,569,1.0826,FII buying in Nifty F&O segment signals sustained bullish outlook,1
+2025-05-24,22594.08,17.49,20,724,0.8743,India hospitality sector hits 5-year high occupancy in Q3,0
+2025-05-25,22650.84,19.73,-666,1084,0.941,India bond yields fall to 6.82% on strong demand at RBI auction,1
+2025-05-26,22808.71,21.01,506,663,0.9244,"India current account deficit widens to 2.8% of GDP, rupee weak",-1
+2025-05-27,22576.93,20.21,-1125,1031,0.935,"India 10-year bond yield rises to 7.35%, equity valuations pressured",-1
+2025-05-28,22331.64,17.98,-2646,1307,0.7681,"Nifty Realty crosses 1,000 mark for first time in its history",0
+2025-05-29,22437.66,19.61,413,88,0.7513,Strong Q3 results season: 68% of Nifty50 companies beat estimates,1
+2025-05-30,22501.12,19.34,127,746,1.1114,India crude oil imports fall as domestic production rises,1
+2025-05-31,22555.85,20.72,646,-499,0.8392,Rupee steady at 84.10; RBI likely managing exchange rate volatility,0
+2025-06-01,22629.16,18.59,1415,-252,0.7899,FII net activity nearly flat at ₹-120 Cr in today's session,0
+2025-06-02,22505.49,17.82,160,-69,0.6389,"India gold import at $3.1 Bn in March, broadly in line with estimate",0
+2025-06-03,22556.73,17.84,53,191,0.8209,Tata Motors Q3 JLR revenue growth lifts entire auto sector,1
+2025-06-04,22619.78,17.91,-401,1020,0.7399,"SBI posts record quarterly profit, banking index up 3.5%",1
+2025-06-05,22489.59,17.38,1001,-155,1.0877,Small and midcap stocks hit hard as mutual fund redemptions spike,-1
+2025-06-06,22855.95,18.18,1556,-477,1.0239,Nifty IT gains on strong Q1 deal wins across top-4 IT firms,1
+2025-06-07,22955.08,16.88,416,-667,0.8006,India Q2 GDP growth disappoints at 5.8% vs 6.9% expected,-1
+2025-06-08,22730.63,16.8,-939,996,1.1523,India telecom ARPU rises to ₹218 on tariff hike cycle,1
+2025-06-09,22864.7,17.04,672,220,1.0034,Oil India stake sale overhang creates sector-wide pressure,-1
+2025-06-10,22682.86,17.73,-838,1659,0.857,India logistics sector up 2.8% on PM GatiShakti progress,1
+2025-06-11,22841.97,18.61,314,-95,0.6092,"Nifty50 falls for 4th straight session, technically oversold",-1
+2025-06-12,23074.95,17.21,627,27,1.1631,India IPO pipeline for H2 2025: 55 filings pending with SEBI,1
+2025-06-13,22921.42,15.43,-648,616,0.6947,Solar energy sector up 5.3% as PLI scheme disbursements start,1
+2025-06-14,23116.82,17.17,473,776,0.6901,"India monsoon deficit 15%, agri stocks and FMCG rural play down",-1
+2025-06-15,23205.03,17.64,-69,183,1.0173,"Macquarie upgrades Nifty target to 27,000, market sentiment lifts",1
+2025-06-16,23374.75,16.77,750,2,1.1743,India mutual fund AUM crosses ₹60 lakh Cr milestone,0
+2025-06-17,23761.8,18.73,1393,-123,1.0771,FII derivative positioning turns net short on Nifty index,-1
+2025-06-18,23719.4,18.81,734,-37,0.9798,Nifty Financials down 2.2% as microfinance stress data released,-1
+2025-06-19,23574.99,20.16,-2165,951,1.0038,India economic survey projects 7.0% growth for FY2026,0
+2025-06-20,23404.43,20.07,-28,310,1.0335,Nifty50 adds 420 points on positive global cues and FII buying,1
+2025-06-21,23249.67,22.38,123,681,1.0568,"Nifty50 breaks key 22,500 support, technical selling accelerates",-1
+2025-06-22,23241.41,24.14,-1277,261,1.0258,Global oil prices steady near $82 per barrel; no sector divergence,0
+2025-06-23,23315.9,23.35,96,223,0.9928,RBI MPC meeting outcome awaited; markets trade flat in range,0
+2025-06-24,23377.81,24.09,27,-162,0.9838,India market cap crosses $4.5 trillion for first time,1
+2025-06-25,23549.82,24.38,-155,867,0.9052,"Rupee slips to 87.40 against USD, RBI intervenes to stem fall",-1
+2025-06-26,23559.49,25.51,-428,-369,0.979,India IPO market strongest in 5 years with 42 listings in Q1,1
+2025-06-27,23859.53,23.75,525,-316,0.7831,India consumer confidence index unchanged at 98.4 in latest survey,0
+2025-06-28,23813.06,24.11,868,-2,0.9798,Markets tumble 1.9% on geopolitical tensions in Middle East,-1
+2025-06-29,24377.38,24.89,2766,-262,0.8847,Nifty50 technically breaks out of 3-month consolidation range,1
+2025-06-30,24514.72,22.23,1292,-414,0.831,"NSE market turnover at ₹1.2 lakh Cr, volumes slightly below average",0
+2025-07-01,24344.06,20.47,-224,23,0.9586,Markets mixed: IT gains offset by PSU bank weakness in index,0
+2025-07-02,24130.71,17.83,-1506,1818,1.0645,NSE F&O volumes recover after SEBI margin tweaks stabilise,0
+2025-07-03,24237.14,17.52,100,-569,1.003,Nifty Consumption index at all-time high on urban spend data,-1
+2025-07-04,24198.41,18.42,143,-964,0.7178,Nifty50 bulk deals show large domestic institution accumulation,1
+2025-07-05,24353.02,20.19,-134,480,0.8141,"RBI holds repo rate at 6.25%, signals accommodative stance ahead",1
+2025-07-06,24458.51,20.1,835,-427,1.0444,India healthcare spending to hit ₹6.2 lakh Cr in FY2026,0
+2025-07-07,24450.71,21.89,-174,-232,0.8405,"India gold ETF inflows at ₹1,800 Cr, second best monthly total",0
+2025-07-08,24282.64,19.92,-874,947,0.9018,Adani Group stocks under pressure on renewed concerns,-1
+2025-07-09,23979.17,17.72,-757,663,0.9618,Nifty Bank crashes 2.8% on credit quality concerns in MFI segment,-1
+2025-07-10,23895.5,17.68,-62,-54,0.779,"Budget 2025 capex allocation jumps 22%, infra stocks surge",1
+2025-07-11,24077.3,18.17,497,-664,0.9152,India capex spending on track; market sentiment remains stable,0
+2025-07-12,24128.39,18.12,895,233,0.7417,"Nifty50 consolidates near 24,500 ahead of key CPI data release",0
+2025-07-13,23881.41,15.63,-1617,1253,0.7923,"India direct tax collection exceeds FY2025 target by ₹40,000 Cr",1
+2025-07-14,23923.77,15.71,536,-91,0.904,Nifty Energy down 2.7% as gas pricing policy concerns surface,-1
+2025-07-15,24009.46,14.33,692,812,0.6538,SEBI margin rules tightened; derivative volumes crash 22%,-1
+2025-07-16,23836.91,15.43,-865,54,0.9143,"India inflation eases to 4.1%, RBI policy outlook turns positive",1
+2025-07-17,23875.24,16.08,347,-719,0.8688,"India exports decline 8.3% YoY in February, trade outlook grim",-1
+2025-07-18,23894.22,15.11,-676,158,0.9229,IT sector slumps 3.4% on weak US tech earnings guidance,-1
+2025-07-19,23670.31,14.72,-332,327,0.8777,Nifty50 options volatility spikes ahead of Union Budget presentation,1
+2025-07-20,23749.53,13.71,204,230,0.9993,"Nifty50 rallies 1.8% as FIIs pump ₹4,200 Cr into equities",1
+2025-07-21,23870.17,13.98,163,6,0.8547,MSCI weight for India equities raised to 19.3% from 18.5%,1
+2025-07-22,24098.16,15.45,1524,-310,0.8102,Vedanta misses Q3 estimates; mining sector in broad selloff,-1
+2025-07-23,24322.28,14.47,449,-628,0.8617,Nifty Private Bank index at record; credit cycle remains strong,-1
+2025-07-24,24046.34,15.36,-1919,1785,0.9256,"India-UAE trade deal finalized, Nifty Metal index surges 3.2%",1
+2025-07-25,23862.57,14.93,-1656,904,0.8598,India steel demand projected to grow 9% in FY2026: government,0
+2025-07-26,23974.46,14.22,804,397,0.8482,Defence sector stocks rise sharply on government order pipeline,1
+2025-07-27,24086.61,14.39,-329,519,0.7616,Midcap and smallcap indices trade in line with Nifty; no divergence,0
+2025-07-28,24199.55,13.44,1493,-243,0.7521,India current account deficit narrows to 0.9% of GDP,1
+2025-07-29,25012.66,13.14,1861,-353,0.6588,India power sector reforms attract $8.4 Bn foreign investment,1
+2025-07-30,25141.87,12.09,1503,-252,1.0213,"Domestic institutional selling of ₹4,100 Cr drags market down",-1
+2025-07-31,25393.34,14.92,1063,43,0.7045,Market participants square off ahead of monthly F&O expiry,0
+2025-08-01,25607.77,15.21,733,535,0.775,"FIIs turn net buyers for 5th consecutive session, buying ₹6,300 Cr",1
+2025-08-02,25757.68,14.59,222,198,0.7626,SEBI consultation paper on algo trading released; awaiting responses,0
+2025-08-03,25696.46,15.12,16,547,0.9642,Nifty50 drops 580 points on US Fed hawkish stance signals,-1
+2025-08-04,25870.53,15.22,613,-121,0.8229,Nifty Pharma rallies 2.8% on US FDA approvals for domestic firms,1
+2025-08-05,25708.85,15.18,72,888,1.0074,Nifty FMCG volume growth accelerates to 9.4% in Q3 estimates,1
+2025-08-06,25664.85,16.14,-93,-96,0.7913,"India-Japan semiconductor JV announced, tech stocks rally",1
+2025-08-07,25566.85,17.2,-270,1222,0.9215,"Adani Ports wins major contract, infrastructure stocks rise broadly",1
+2025-08-08,25592.33,16.63,-124,236,0.7792,"NTPC announces major renewable capacity addition, green energy stocks up",1
+2025-08-09,26108.67,16.05,1846,-1346,1.1282,"Crude oil at $96/barrel hits India import bill, market falls",-1
+2025-08-10,25705.26,15.88,-1281,841,0.7257,"MF SIP contributions cross ₹21,000 Cr monthly for first time",1
+2025-08-11,25863.4,13.29,-449,62,0.8665,Nifty Consumer Staples maintains resilience in volatile session,1
+2025-08-12,25518.94,11.85,-2071,1552,0.8838,Nifty Realty jumps 4.1% as RBI rate cut boosted housing demand,1
+2025-08-13,25424.4,13.98,97,-170,0.8894,India's fiscal consolidation on track: FRBM targets to be met,1
+2025-08-14,25668.52,16.28,1002,-474,0.852,"Nifty Energy Q4 earnings growth at 16.4%, beats expectations",0
+2025-08-15,25690.25,16.12,-31,-731,0.8562,Nifty consolidates after 5-day winning streak; breadth neutral,0
+2025-08-16,25463.62,16.96,-823,344,0.8897,"India Q4 advance tax collection up 19% YoY, positive signal",1
+2025-08-17,25316.86,17.42,-335,-861,0.8737,India services inflation eases marginally; overall outlook stable,0
+2025-08-18,25471.17,21.16,248,-704,1.0631,"HDFC Life, SBI Life hit 52-week highs on strong premium data",1
+2025-08-19,25321.13,22.25,-1023,1041,1.229,India power grid stocks fall on regulator tariff revision,-1
+2025-08-20,25375.37,21.76,319,449,0.8895,Nifty Midcap 150 gains 2.4% as broader earnings season impresses,0
+2025-08-21,25392.82,20.31,-522,648,0.7703,Tata Consultancy Services bags $1.2 Bn multi-year contract,1
+2025-08-22,25260.14,18.2,-248,-172,0.8924,India corporate governance standards improve: SEBI annual report,-1
+2025-08-23,25732.41,18.43,722,-149,1.216,Nifty Smallcap 100 gains 3.1% as SIP flows hit record high,-1
+2025-08-24,25879.2,17.49,1153,-321,0.7959,Nifty50 technical setup constructive above 200-DMA: analysts,0
+2025-08-25,25445.17,15.82,-1308,209,1.064,"RBI OMO purchase of ₹30,000 Cr eases liquidity, bonds rally",1
+2025-08-26,25493.18,15.22,331,803,1.0596,Nifty50 market-on-close buying surge; institutions accumulate,1
+2025-08-27,25357.78,14.14,88,599,0.7757,Nifty Auto index flat; sector monitors monthly sales print closely,0
+2025-08-28,25549.85,16.47,1709,-680,0.9453,India private capex cycle revival evident in bank credit data,0
+2025-08-29,25385.93,17.65,3,212,1.0902,India startup ecosystem: 8 unicorns added in Q1 2025,0
+2025-08-30,25368.79,17.67,-1168,830,0.8496,"Nifty Commodities stable as crude, copper hold key levels",-1
+2025-08-31,25485.56,19.47,-336,-670,0.8976,India EV policy overhaul attracts Volkswagen and BMW investments,1
+2025-09-01,25681.5,19.45,346,-79,0.8519,Nifty Oil & Gas stable as OMC marketing margins stay healthy,1
+2025-09-02,25428.44,18.3,-916,271,0.7827,Nifty Metal index outperforms on domestic demand recovery,-1
+2025-09-03,25363.85,20.1,71,-333,0.8536,Nifty Infrastructure index beats broader market in July rally,0
+2025-09-04,25269.24,20.58,-787,414,0.7918,"NSE volatility index at 15.8, one of the lowest readings this year",0
+2025-09-05,25136.84,19.13,-382,1271,0.921,India 5G rollout progress positive for telecom sector,1
+2025-09-06,25524.55,18.81,987,76,0.8198,"L&T bags ₹18,000 Cr infrastructure order, stock up 3.8%",1
+2025-09-07,25620.25,17.69,-15,-79,0.9234,Nifty Bank trades in 200-point range ahead of RBI credit policy,0

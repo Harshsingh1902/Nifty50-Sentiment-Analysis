@@ -1,0 +1,251 @@
+Date,News_Headline,BERT_Sentiment,Sentiment_Category,Market_Impact,Signal_Accuracy
+2025-01-01,"India corporate bond market sees ₹9,200 Cr issuances this week",0,Neutral,Downward,Incorrect
+2025-01-02,India renewable energy capacity crosses 250 GW milestone,1,Positive,Upward,Correct
+2025-01-03,India container throughput at ports up 12% YoY: ministry data,1,Positive,Upward,Correct
+2025-01-04,"Wipro beats estimates, stock rallies 6.1% in morning trade",1,Positive,Downward,Incorrect
+2025-01-05,"India PMI manufacturing at 53.8, in-line with consensus forecast",0,Neutral,Downward,Incorrect
+2025-01-06,Nifty Realty consolidates near 52-week high; sector factors priced in,0,Neutral,Upward,Incorrect
+2025-01-07,"US tariff threat on Indian pharma exports, sector falls 3.1%",-1,Negative,Upward,Incorrect
+2025-01-08,Sebi board meeting to address F&O regulations; market on hold,0,Neutral,Downward,Incorrect
+2025-01-09,Nifty Pharma down 2.1% as US FDA sends warning letter to firm,-1,Negative,Upward,Incorrect
+2025-01-10,IT major mid-quarter update shows steady but unspectacular growth,0,Neutral,Downward,Incorrect
+2025-01-11,Hero MotoCorp sales beat estimates; two-wheeler stocks rally,1,Positive,Downward,Incorrect
+2025-01-12,"Bajaj Finance Q4 AUM growth at 28%, NBFC sector leads gains",1,Positive,Upward,Correct
+2025-01-13,Nifty Chemical index gains on China+1 supply chain shift,0,Neutral,Downward,Incorrect
+2025-01-14,"FII sell-off: ₹5,800 Cr exits equity market in single session",-1,Negative,Downward,Correct
+2025-01-15,Maruti Suzuki Q4 EBITDA margins surprise positively at 13.2%,1,Positive,Downward,Incorrect
+2025-01-16,Global recession fears trigger broad-based selling across sectors,-1,Negative,Downward,Correct
+2025-01-17,"Large-cap MF inflows at ₹8,300 Cr in June, stable momentum",0,Neutral,Upward,Incorrect
+2025-01-18,"Global tech selloff drags Infosys, TCS down 3-5% each",-1,Negative,Downward,Correct
+2025-01-19,Nifty FMCG sector flat; awaiting rural volume growth trend data,0,Neutral,Downward,Incorrect
+2025-01-20,India Q1 corporate revenue growth at 11.3% YoY beat estimates,-1,Negative,Upward,Incorrect
+2025-01-21,India-Vietnam trade corridor investment signals boost logistics stocks,0,Neutral,Downward,Incorrect
+2025-01-22,Nifty FMCG up 1.6% as rural wage growth outpaces urban,-1,Negative,Upward,Incorrect
+2025-01-23,"India trade deficit at record $25 Bn, rupee hits 8-month low",-1,Negative,Downward,Correct
+2025-01-24,India direct tax buoyancy in line with trend; no major surprises,0,Neutral,Downward,Incorrect
+2025-01-25,NSE index derivatives turnover normalises post margin rule changes,0,Neutral,Upward,Incorrect
+2025-01-26,"Reliance Industries Q4 profit up 18% YoY, triggers broad market rally",1,Positive,Downward,Incorrect
+2025-01-27,"India hotel sector occupancy at record 78%, tourism stocks surge",1,Positive,Upward,Correct
+2025-01-28,"Nifty IT index outperforms as rupee weakens, USD revenues boost",1,Positive,Downward,Incorrect
+2025-01-29,India fertiliser sector stocks rally on policy subsidy clarity,1,Positive,Downward,Incorrect
+2025-01-30,Nifty Midcap 100 gains 2.2% as domestic mutual funds pour in,1,Positive,Downward,Incorrect
+2025-01-31,Nifty500 corrects 2.3% in week as FIIs turn sellers again,-1,Negative,Upward,Incorrect
+2025-02-01,"FPIs pull out ₹18,000 Cr in October amid global risk-off mood",-1,Negative,Upward,Incorrect
+2025-02-02,India 91-day T-Bill yield steady at 6.45% at weekly auction,0,Neutral,Downward,Incorrect
+2025-02-03,"IT sector jumps on strong TCS quarterly guidance, Nifty IT up 2.5%",1,Positive,Upward,Correct
+2025-02-04,India industrial output contracts 0.4% in December MoM,-1,Negative,Downward,Correct
+2025-02-05,"Budget capex multiplier effect felt across cement, steel sectors",1,Positive,Upward,Correct
+2025-02-06,"FII holding in Nifty50 stocks at 22.3%, stable over past month",0,Neutral,Downward,Incorrect
+2025-02-07,Nifty Energy up 2.9% as ONGC reports strong refining margins,1,Positive,Downward,Incorrect
+2025-02-08,Q2 earnings season begins; sector analysts adopt wait-and-watch stance,0,Neutral,Upward,Incorrect
+2025-02-09,Nifty Listed Private Equity index outperforms on M&A activity,1,Positive,Upward,Correct
+2025-02-10,"Market breadth weak: 1,620 declines vs 380 advances on NSE",-1,Negative,Upward,Incorrect
+2025-02-11,Nifty Consumer discretionary up 2.1% on wedding season demand,0,Neutral,Downward,Incorrect
+2025-02-12,India railway sector allocation doubled; infra stocks in focus,-1,Negative,Downward,Correct
+2025-02-13,Nifty Midcap index underperforms as global risk appetite weakens,-1,Negative,Downward,Correct
+2025-02-14,India rating upgraded to BBB+ outlook positive by Fitch Ratings,1,Positive,Downward,Incorrect
+2025-02-15,Nifty PSE index at record high on divestment target revision,1,Positive,Downward,Incorrect
+2025-02-16,"RBI raises CRR by 50 bps, banking stocks fall sharply",-1,Negative,Upward,Incorrect
+2025-02-17,"Asian Paints volume growth beats forecast, consumer sector up",1,Positive,Upward,Correct
+2025-02-18,Nifty CPSE ETF subscription oversubscribed 4x in latest tranche,1,Positive,Downward,Incorrect
+2025-02-19,"India credit growth at 14.2% YoY, broadly in line with RBI target",0,Neutral,Upward,Incorrect
+2025-02-20,"India e-commerce GMV grows 34% YoY, retail sector stocks jump",1,Positive,Downward,Incorrect
+2025-02-21,Auto stocks rally as vehicle sales post record February numbers,1,Positive,Downward,Incorrect
+2025-02-22,Nifty up 260 points as IIP data beats consensus by wide margin,1,Positive,Upward,Correct
+2025-02-23,Nifty MNC index outperforms on strong global parent guidance,1,Positive,Upward,Correct
+2025-02-24,FMCG sector outperforms on robust rural demand recovery data,1,Positive,Upward,Correct
+2025-02-25,"DII buying of ₹1,200 Cr broadly offsets modest FII selling today",0,Neutral,Downward,Incorrect
+2025-02-26,"India trade data mixed: exports up 3.1%, imports up 4.6%",0,Neutral,Downward,Incorrect
+2025-02-27,"Nifty50 sees highest single-day FII buying of ₹7,200 Cr",1,Positive,Upward,Correct
+2025-02-28,Nifty Smallcap 250 rises 2.6% as domestic flows pick up,1,Positive,Upward,Correct
+2025-03-01,"Nifty50 year-to-date return at +12.4%, beats EM peer average",1,Positive,Downward,Incorrect
+2025-03-02,"Market breadth strong as 1,850 stocks advance on NSE today",1,Positive,Downward,Incorrect
+2025-03-03,India corporate profit-to-GDP ratio highest in a decade,1,Positive,Downward,Incorrect
+2025-03-04,Nifty IT and Pharma trade in narrow bands; no trigger in view,0,Neutral,Downward,Incorrect
+2025-03-05,Nifty IT down 4.2% on major US layoff announcements at IT firms,-1,Negative,Upward,Incorrect
+2025-03-06,"PSU banks hold gains from prior session, await RBI credit data",0,Neutral,Upward,Incorrect
+2025-03-07,Nifty Diversified Banks index up 2.7% on CASA ratio improvement,1,Positive,Downward,Incorrect
+2025-03-08,Nifty50 gains 310 points in final hour on short-covering rally,1,Positive,Upward,Correct
+2025-03-09,GST collection tops ₹2.1 lakh Cr for third consecutive month,1,Positive,Upward,Correct
+2025-03-10,India LNG terminal capacity expansion boosts energy security,0,Neutral,Downward,Incorrect
+2025-03-11,Nifty Realty drops 3.5% on rising mortgage rate expectations,-1,Negative,Upward,Incorrect
+2025-03-12,Nifty50 September futures at 85-point premium; bullish rollover,0,Neutral,Upward,Incorrect
+2025-03-13,"HDFC Bank shares up 4% post Q3 results, NPA at record low",1,Positive,Downward,Incorrect
+2025-03-14,Cement sector falls 2.4% on demand slowdown in northern states,-1,Negative,Upward,Incorrect
+2025-03-15,India budget session begins; markets watch for fiscal roadmap,0,Neutral,Downward,Incorrect
+2025-03-16,"India core sector output rises 7.8%, Nifty defies global weakness",1,Positive,Upward,Correct
+2025-03-17,India semiconductor wafer fab PLI scheme attracts 6 major bids,1,Positive,Upward,Correct
+2025-03-18,India telecom stocks tumble on AGR dues ruling uncertainty,-1,Negative,Downward,Correct
+2025-03-19,China slowdown threatens India exports; auto and metal sectors fall,-1,Negative,Upward,Incorrect
+2025-03-20,"Nifty IT Q4 revenue growth at 8.2% CC, above 7.5% estimate",1,Positive,Downward,Incorrect
+2025-03-21,"Nifty Bank consolidates above 51,000; sector investors stay neutral",0,Neutral,Downward,Incorrect
+2025-03-22,SEBI approves new SME IPO norms boosting retail investor confidence,1,Positive,Upward,Correct
+2025-03-23,Nifty50 flat in early trade as mixed global cues keep market cautious,0,Neutral,Upward,Incorrect
+2025-03-24,"Foreign portfolio inflows hit ₹12,000 Cr in a single session",1,Positive,Downward,Incorrect
+2025-03-25,Nifty trades sideways as FII and DII flows largely offset each other,0,Neutral,Downward,Incorrect
+2025-03-26,"India urban unemployment falls to 6.8%, consumption outlook positive",1,Positive,Downward,Incorrect
+2025-03-27,Nifty Consumer Durables falls 2.6% on weak urban demand data,-1,Negative,Upward,Incorrect
+2025-03-28,"India corporate issuance of green bonds crosses ₹80,000 Cr",-1,Negative,Upward,Incorrect
+2025-03-29,Nifty50 premium to EM valuation narrows as earnings catch up,0,Neutral,Downward,Incorrect
+2025-03-30,Bank NPAs rise in PSU segment; lenders down 2-4% across board,-1,Negative,Upward,Incorrect
+2025-03-31,India-US bilateral trade talks progress slowly; no immediate impact,0,Neutral,Upward,Incorrect
+2025-04-01,India retail inflation lowest since May 2023 at 3.9%,1,Positive,Upward,Correct
+2025-04-02,India-UK free trade agreement progress boosts pharma and IT,1,Positive,Downward,Incorrect
+2025-04-03,"India electricity generation crosses 2,000 BU in FY2025",1,Positive,Downward,Incorrect
+2025-04-04,Nifty500 Value 50 index outperforms growth index in Q2,1,Positive,Downward,Incorrect
+2025-04-05,"India PMI composite at 60.5, signals broad economic expansion",1,Positive,Downward,Incorrect
+2025-04-06,"India manufacturing PMI at 57.3, highest in 14 months",1,Positive,Upward,Correct
+2025-04-07,Nifty Metal index plunges 3.7% on China steel dumping fears,-1,Negative,Upward,Incorrect
+2025-04-08,Nifty500 unchanged ahead of index rebalancing effective month-end,0,Neutral,Upward,Incorrect
+2025-04-09,India new home sales up 18% QoQ on lower mortgage rates,1,Positive,Downward,Incorrect
+2025-04-10,Markets unchanged as investors digest mixed corporate earnings,0,Neutral,Downward,Incorrect
+2025-04-11,"UltraTech Cement Q3 margins expand, infrastructure rally continues",1,Positive,Downward,Incorrect
+2025-04-12,India business confidence survey hits 5-year high: FICCI data,1,Positive,Downward,Incorrect
+2025-04-13,"India IT hiring improves marginally, signals sector recovery",0,Neutral,Downward,Incorrect
+2025-04-14,"Nifty50 holds key support at 24,000 as volumes remain thin",0,Neutral,Downward,Incorrect
+2025-04-15,Sun Pharma US generics pipeline gets 3 ANDA approvals,1,Positive,Upward,Correct
+2025-04-16,Nifty Mid Small IT index up 4.2% on SaaS segment deal wins,1,Positive,Upward,Correct
+2025-04-17,India forex reserves hit all-time high of $712 billion,1,Positive,Upward,Correct
+2025-04-18,NBFC liquidity tightens; market-wide risk aversion rises,-1,Negative,Upward,Incorrect
+2025-04-19,India textile sector gets boost from EU trade agreement news,-1,Negative,Downward,Correct
+2025-04-20,Crude oil spike to $98 pushes OMC stocks to 52-week lows,-1,Negative,Downward,Correct
+2025-04-21,India's ease of doing business ranking improves to 63rd globally,1,Positive,Upward,Correct
+2025-04-22,Nifty Healthcare index rallies 3.1% on domestic sector optimism,1,Positive,Upward,Correct
+2025-04-23,Nifty500 gains 1.4% as RBI increases FPI debt investment limit,1,Positive,Upward,Correct
+2025-04-24,"US yield inversion deepens, triggering emerging market outflows",-1,Negative,Downward,Correct
+2025-04-25,India WPI inflation stable at 2.1%; no major reaction in bonds,0,Neutral,Upward,Incorrect
+2025-04-26,"India inflation surges to 6.7%, above RBI tolerance band",-1,Negative,Upward,Incorrect
+2025-04-27,Nifty50 weekly options writing attracts institutional interest,0,Neutral,Downward,Incorrect
+2025-04-28,India Q4 FY25 trade surplus in services at $17.2 Bn record,1,Positive,Upward,Correct
+2025-04-29,"DIIs average buying of ₹4,800 Cr/day in July, highest this year",1,Positive,Upward,Correct
+2025-04-30,Sensex surges to all-time high on strong corporate earnings season,1,Positive,Upward,Correct
+2025-05-01,Nifty PSU Bank index down 3.8% on rising NPA disclosure concerns,-1,Negative,Downward,Correct
+2025-05-02,India capital goods sector up 3.1% on order inflow visibility,1,Positive,Upward,Correct
+2025-05-03,"India Q3 GDP growth at 7.4%, beats all analyst estimates",1,Positive,Downward,Incorrect
+2025-05-04,Nifty Financial Services index hits new record on NBFC reforms,1,Positive,Upward,Correct
+2025-05-05,"India power demand growth at 6.1% YoY, in-line with forecasts",0,Neutral,Upward,Incorrect
+2025-05-06,India fintech payment volumes cross ₹20 lakh Cr monthly,0,Neutral,Downward,Incorrect
+2025-05-07,"Coal India dividend of ₹25/share announced, PSU stocks surge",1,Positive,Downward,Incorrect
+2025-05-08,Markets await US FOMC meeting minutes for next direction cue,0,Neutral,Upward,Incorrect
+2025-05-09,Nifty PSU Bank index up 4.2% on strong asset quality numbers,1,Positive,Downward,Incorrect
+2025-05-10,Paytm shares hit circuit down; fintech sector under pressure,-1,Negative,Downward,Correct
+2025-05-11,India fiscal deficit at 76% of target in just 7 months,-1,Negative,Upward,Incorrect
+2025-05-12,India bond market awaits large government bond auction outcome,0,Neutral,Downward,Incorrect
+2025-05-13,Nifty REIT index up 2.3% on strong office leasing demand,0,Neutral,Upward,Incorrect
+2025-05-14,Nifty50 Q3 earnings growth estimated at 14% YoY: analyst poll,-1,Negative,Downward,Correct
+2025-05-15,"India services PMI at 59.1, highest reading in two years",1,Positive,Upward,Correct
+2025-05-16,"Nifty Bank crosses 52,000 for first time on credit growth data",1,Positive,Downward,Incorrect
+2025-05-17,India aviation stocks soar as passenger traffic hits peak,0,Neutral,Downward,Incorrect
+2025-05-18,"DII buying of ₹3,400 Cr cushions market on FII selling day",1,Positive,Upward,Correct
+2025-05-19,"India's fiscal deficit FY2025 final at 5.1%, better than target",1,Positive,Downward,Incorrect
+2025-05-20,Nifty50 range-bound session; global cues awaited for direction,0,Neutral,Upward,Incorrect
+2025-05-21,LIC dividend surprise of ₹6/share drives PSU insurance rally,1,Positive,Upward,Correct
+2025-05-22,"Nifty50 crosses 25,000 for first time this quarter",0,Neutral,Downward,Incorrect
+2025-05-23,FII buying in Nifty F&O segment signals sustained bullish outlook,1,Positive,Upward,Correct
+2025-05-24,India hospitality sector hits 5-year high occupancy in Q3,0,Neutral,Upward,Incorrect
+2025-05-25,India bond yields fall to 6.82% on strong demand at RBI auction,1,Positive,Upward,Correct
+2025-05-26,"India current account deficit widens to 2.8% of GDP, rupee weak",-1,Negative,Downward,Correct
+2025-05-27,"India 10-year bond yield rises to 7.35%, equity valuations pressured",-1,Negative,Downward,Correct
+2025-05-28,"Nifty Realty crosses 1,000 mark for first time in its history",0,Neutral,Upward,Incorrect
+2025-05-29,Strong Q3 results season: 68% of Nifty50 companies beat estimates,1,Positive,Upward,Correct
+2025-05-30,India crude oil imports fall as domestic production rises,1,Positive,Upward,Correct
+2025-05-31,Rupee steady at 84.10; RBI likely managing exchange rate volatility,0,Neutral,Upward,Incorrect
+2025-06-01,FII net activity nearly flat at ₹-120 Cr in today's session,0,Neutral,Downward,Incorrect
+2025-06-02,"India gold import at $3.1 Bn in March, broadly in line with estimate",0,Neutral,Upward,Incorrect
+2025-06-03,Tata Motors Q3 JLR revenue growth lifts entire auto sector,1,Positive,Upward,Correct
+2025-06-04,"SBI posts record quarterly profit, banking index up 3.5%",1,Positive,Downward,Incorrect
+2025-06-05,Small and midcap stocks hit hard as mutual fund redemptions spike,-1,Negative,Upward,Incorrect
+2025-06-06,Nifty IT gains on strong Q1 deal wins across top-4 IT firms,1,Positive,Upward,Correct
+2025-06-07,India Q2 GDP growth disappoints at 5.8% vs 6.9% expected,-1,Negative,Downward,Correct
+2025-06-08,India telecom ARPU rises to ₹218 on tariff hike cycle,1,Positive,Upward,Correct
+2025-06-09,Oil India stake sale overhang creates sector-wide pressure,-1,Negative,Downward,Correct
+2025-06-10,India logistics sector up 2.8% on PM GatiShakti progress,1,Positive,Upward,Correct
+2025-06-11,"Nifty50 falls for 4th straight session, technically oversold",-1,Negative,Upward,Incorrect
+2025-06-12,India IPO pipeline for H2 2025: 55 filings pending with SEBI,1,Positive,Downward,Incorrect
+2025-06-13,Solar energy sector up 5.3% as PLI scheme disbursements start,1,Positive,Upward,Correct
+2025-06-14,"India monsoon deficit 15%, agri stocks and FMCG rural play down",-1,Negative,Upward,Incorrect
+2025-06-15,"Macquarie upgrades Nifty target to 27,000, market sentiment lifts",1,Positive,Upward,Correct
+2025-06-16,India mutual fund AUM crosses ₹60 lakh Cr milestone,0,Neutral,Upward,Incorrect
+2025-06-17,FII derivative positioning turns net short on Nifty index,-1,Negative,Downward,Correct
+2025-06-18,Nifty Financials down 2.2% as microfinance stress data released,-1,Negative,Downward,Correct
+2025-06-19,India economic survey projects 7.0% growth for FY2026,0,Neutral,Downward,Incorrect
+2025-06-20,Nifty50 adds 420 points on positive global cues and FII buying,1,Positive,Downward,Incorrect
+2025-06-21,"Nifty50 breaks key 22,500 support, technical selling accelerates",-1,Negative,Downward,Correct
+2025-06-22,Global oil prices steady near $82 per barrel; no sector divergence,0,Neutral,Upward,Incorrect
+2025-06-23,RBI MPC meeting outcome awaited; markets trade flat in range,0,Neutral,Upward,Incorrect
+2025-06-24,India market cap crosses $4.5 trillion for first time,1,Positive,Upward,Correct
+2025-06-25,"Rupee slips to 87.40 against USD, RBI intervenes to stem fall",-1,Negative,Upward,Incorrect
+2025-06-26,India IPO market strongest in 5 years with 42 listings in Q1,1,Positive,Upward,Correct
+2025-06-27,India consumer confidence index unchanged at 98.4 in latest survey,0,Neutral,Downward,Incorrect
+2025-06-28,Markets tumble 1.9% on geopolitical tensions in Middle East,-1,Negative,Upward,Incorrect
+2025-06-29,Nifty50 technically breaks out of 3-month consolidation range,1,Positive,Upward,Correct
+2025-06-30,"NSE market turnover at ₹1.2 lakh Cr, volumes slightly below average",0,Neutral,Downward,Incorrect
+2025-07-01,Markets mixed: IT gains offset by PSU bank weakness in index,0,Neutral,Downward,Incorrect
+2025-07-02,NSE F&O volumes recover after SEBI margin tweaks stabilise,0,Neutral,Upward,Incorrect
+2025-07-03,Nifty Consumption index at all-time high on urban spend data,-1,Negative,Downward,Correct
+2025-07-04,Nifty50 bulk deals show large domestic institution accumulation,1,Positive,Upward,Correct
+2025-07-05,"RBI holds repo rate at 6.25%, signals accommodative stance ahead",1,Positive,Upward,Correct
+2025-07-06,India healthcare spending to hit ₹6.2 lakh Cr in FY2026,0,Neutral,Downward,Incorrect
+2025-07-07,"India gold ETF inflows at ₹1,800 Cr, second best monthly total",0,Neutral,Downward,Incorrect
+2025-07-08,Adani Group stocks under pressure on renewed concerns,-1,Negative,Downward,Correct
+2025-07-09,Nifty Bank crashes 2.8% on credit quality concerns in MFI segment,-1,Negative,Downward,Correct
+2025-07-10,"Budget 2025 capex allocation jumps 22%, infra stocks surge",1,Positive,Upward,Correct
+2025-07-11,India capex spending on track; market sentiment remains stable,0,Neutral,Upward,Incorrect
+2025-07-12,"Nifty50 consolidates near 24,500 ahead of key CPI data release",0,Neutral,Downward,Incorrect
+2025-07-13,"India direct tax collection exceeds FY2025 target by ₹40,000 Cr",1,Positive,Upward,Correct
+2025-07-14,Nifty Energy down 2.7% as gas pricing policy concerns surface,-1,Negative,Upward,Incorrect
+2025-07-15,SEBI margin rules tightened; derivative volumes crash 22%,-1,Negative,Downward,Correct
+2025-07-16,"India inflation eases to 4.1%, RBI policy outlook turns positive",1,Positive,Upward,Correct
+2025-07-17,"India exports decline 8.3% YoY in February, trade outlook grim",-1,Negative,Upward,Incorrect
+2025-07-18,IT sector slumps 3.4% on weak US tech earnings guidance,-1,Negative,Downward,Correct
+2025-07-19,Nifty50 options volatility spikes ahead of Union Budget presentation,1,Positive,Upward,Correct
+2025-07-20,"Nifty50 rallies 1.8% as FIIs pump ₹4,200 Cr into equities",1,Positive,Upward,Correct
+2025-07-21,MSCI weight for India equities raised to 19.3% from 18.5%,1,Positive,Upward,Correct
+2025-07-22,Vedanta misses Q3 estimates; mining sector in broad selloff,-1,Negative,Upward,Incorrect
+2025-07-23,Nifty Private Bank index at record; credit cycle remains strong,-1,Negative,Downward,Correct
+2025-07-24,"India-UAE trade deal finalized, Nifty Metal index surges 3.2%",1,Positive,Downward,Incorrect
+2025-07-25,India steel demand projected to grow 9% in FY2026: government,0,Neutral,Upward,Incorrect
+2025-07-26,Defence sector stocks rise sharply on government order pipeline,1,Positive,Upward,Correct
+2025-07-27,Midcap and smallcap indices trade in line with Nifty; no divergence,0,Neutral,Upward,Incorrect
+2025-07-28,India current account deficit narrows to 0.9% of GDP,1,Positive,Upward,Correct
+2025-07-29,India power sector reforms attract $8.4 Bn foreign investment,1,Positive,Upward,Correct
+2025-07-30,"Domestic institutional selling of ₹4,100 Cr drags market down",-1,Negative,Upward,Incorrect
+2025-07-31,Market participants square off ahead of monthly F&O expiry,0,Neutral,Upward,Incorrect
+2025-08-01,"FIIs turn net buyers for 5th consecutive session, buying ₹6,300 Cr",1,Positive,Upward,Correct
+2025-08-02,SEBI consultation paper on algo trading released; awaiting responses,0,Neutral,Downward,Incorrect
+2025-08-03,Nifty50 drops 580 points on US Fed hawkish stance signals,-1,Negative,Upward,Incorrect
+2025-08-04,Nifty Pharma rallies 2.8% on US FDA approvals for domestic firms,1,Positive,Downward,Incorrect
+2025-08-05,Nifty FMCG volume growth accelerates to 9.4% in Q3 estimates,1,Positive,Downward,Incorrect
+2025-08-06,"India-Japan semiconductor JV announced, tech stocks rally",1,Positive,Downward,Incorrect
+2025-08-07,"Adani Ports wins major contract, infrastructure stocks rise broadly",1,Positive,Upward,Correct
+2025-08-08,"NTPC announces major renewable capacity addition, green energy stocks up",1,Positive,Upward,Correct
+2025-08-09,"Crude oil at $96/barrel hits India import bill, market falls",-1,Negative,Downward,Correct
+2025-08-10,"MF SIP contributions cross ₹21,000 Cr monthly for first time",1,Positive,Upward,Correct
+2025-08-11,Nifty Consumer Staples maintains resilience in volatile session,1,Positive,Downward,Incorrect
+2025-08-12,Nifty Realty jumps 4.1% as RBI rate cut boosted housing demand,1,Positive,Downward,Incorrect
+2025-08-13,India's fiscal consolidation on track: FRBM targets to be met,1,Positive,Upward,Correct
+2025-08-14,"Nifty Energy Q4 earnings growth at 16.4%, beats expectations",0,Neutral,Upward,Incorrect
+2025-08-15,Nifty consolidates after 5-day winning streak; breadth neutral,0,Neutral,Downward,Incorrect
+2025-08-16,"India Q4 advance tax collection up 19% YoY, positive signal",1,Positive,Downward,Incorrect
+2025-08-17,India services inflation eases marginally; overall outlook stable,0,Neutral,Upward,Incorrect
+2025-08-18,"HDFC Life, SBI Life hit 52-week highs on strong premium data",1,Positive,Downward,Incorrect
+2025-08-19,India power grid stocks fall on regulator tariff revision,-1,Negative,Upward,Incorrect
+2025-08-20,Nifty Midcap 150 gains 2.4% as broader earnings season impresses,0,Neutral,Upward,Incorrect
+2025-08-21,Tata Consultancy Services bags $1.2 Bn multi-year contract,1,Positive,Downward,Incorrect
+2025-08-22,India corporate governance standards improve: SEBI annual report,-1,Negative,Upward,Incorrect
+2025-08-23,Nifty Smallcap 100 gains 3.1% as SIP flows hit record high,-1,Negative,Upward,Incorrect
+2025-08-24,Nifty50 technical setup constructive above 200-DMA: analysts,0,Neutral,Downward,Incorrect
+2025-08-25,"RBI OMO purchase of ₹30,000 Cr eases liquidity, bonds rally",1,Positive,Upward,Correct
+2025-08-26,Nifty50 market-on-close buying surge; institutions accumulate,1,Positive,Downward,Incorrect
+2025-08-27,Nifty Auto index flat; sector monitors monthly sales print closely,0,Neutral,Upward,Incorrect
+2025-08-28,India private capex cycle revival evident in bank credit data,0,Neutral,Downward,Incorrect
+2025-08-29,India startup ecosystem: 8 unicorns added in Q1 2025,0,Neutral,Downward,Incorrect
+2025-08-30,"Nifty Commodities stable as crude, copper hold key levels",-1,Negative,Upward,Incorrect
+2025-08-31,India EV policy overhaul attracts Volkswagen and BMW investments,1,Positive,Upward,Correct
+2025-09-01,Nifty Oil & Gas stable as OMC marketing margins stay healthy,1,Positive,Downward,Incorrect
+2025-09-02,Nifty Metal index outperforms on domestic demand recovery,-1,Negative,Downward,Correct
+2025-09-03,Nifty Infrastructure index beats broader market in July rally,0,Neutral,Downward,Incorrect
+2025-09-04,"NSE volatility index at 15.8, one of the lowest readings this year",0,Neutral,Downward,Incorrect
+2025-09-05,India 5G rollout progress positive for telecom sector,1,Positive,Upward,Correct
+2025-09-06,"L&T bags ₹18,000 Cr infrastructure order, stock up 3.8%",1,Positive,Upward,Correct
+2025-09-07,Nifty Bank trades in 200-point range ahead of RBI credit policy,0,Neutral,Downward,Incorrect
