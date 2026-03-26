@@ -24,10 +24,7 @@ The **Nifty 50 Sentiment Engine** evaluates 250 trading days of data to identify
 ## 📊 Visual Insights & Analytics
 
 ### 1. Managerial Dashboard (Excel Integrated)
-The central command center providing a high-level overview of price trends and signal accuracy.
 
-![Managerial Dashboard](plots/Excel_Dashboard.png)
-*Figure 1: Comprehensive Financial Dashboard for Executive Reporting.*
 
 ---
 
