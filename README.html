@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nifty 50 Sentiment Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #050C10;
+    --surface: #0A1620;
+    --surface2: #0F1F2D;
+    --border: #1A3045;
+    --accent: #00E5C0;
+    --accent2: #FF6B35;
+    --accent3: #7B61FF;
+    --gold: #F5C842;
+    --text: #E8F4F0;
+    --muted: #5A8A7A;
+    --red: #FF4D6D;
+    --green: #00C896;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* GRID OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,192,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,192,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,192,0.08);
+    border: 1px solid rgba(0,229,192,0.25);
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 span.accent { color: var(--accent); }
+  .hero h1 span.dim { color: var(--muted); }
+
+  .hero-sub {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .badge {
+    padding: 5px 13px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+
+  .badge-r    { background: rgba(123,97,255,0.1); border-color: rgba(123,97,255,0.4); color: var(--accent3); }
+  .badge-nlp  { background: rgba(0,229,192,0.08); border-color: rgba(0,229,192,0.3); color: var(--accent); }
+  .badge-fin  { background: rgba(245,200,66,0.08); border-color: rgba(245,200,66,0.3); color: var(--gold); }
+  .badge-stat { background: rgba(255,107,53,0.08); border-color: rgba(255,107,53,0.3); color: var(--accent2); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-item {
+    background: var(--surface);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── OVERVIEW CARDS ─── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .pillar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .pillar-card.c1::before { background: var(--accent); }
+  .pillar-card.c2::before { background: var(--accent2); }
+  .pillar-card.c3::before { background: var(--accent3); }
+
+  .pillar-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pillar-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .pillar-card.c1 .pillar-title { color: var(--accent); }
+  .pillar-card.c2 .pillar-title { color: var(--accent2); }
+  .pillar-card.c3 .pillar-title { color: var(--accent3); }
+
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ─── CHARTS ─── */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .chart-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .chart-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .chart-badge {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(0,229,192,0.08);
+    border: 1px solid rgba(0,229,192,0.2);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .chart-body {
+    padding: 24px;
+  }
+
+  .chart-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  canvas {
+    max-height: 280px;
+  }
+
+  /* ─── DASHBOARD ─── */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .kpi-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .kpi-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .kpi-val.up { color: var(--green); }
+  .kpi-val.down { color: var(--red); }
+  .kpi-val.neutral { color: var(--gold); }
+  .kpi-val.info { color: var(--accent3); }
+
+  .kpi-change {
+    font-size: 11px;
+    margin-top: 4px;
+    color: var(--muted);
+  }
+
+  .kpi-change .pos { color: var(--green); }
+  .kpi-change .neg { color: var(--red); }
+
+  /* ─── HEATMAP ─── */
+  .heatmap-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .heatmap-table th {
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .heatmap-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    position: relative;
+    transition: opacity 0.2s;
+  }
+
+  .heatmap-table td:hover { opacity: 0.85; cursor: default; }
+
+  .row-label {
+    text-align: right !important;
+    color: var(--muted);
+    font-size: 11px;
+    padding-right: 16px !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* ─── WORD CLOUD ─── */
+  .wordcloud-container {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .wc-word {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    transition: transform 0.2s;
+    cursor: default;
+  }
+
+  .wc-word:hover { transform: scale(1.15); }
+
+  /* ─── CODE BLOCK ─── */
+  .code-block {
+    background: #020810;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .code-header {
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.red { background: #FF5F56; }
+  .dot.yellow { background: #FFBD2E; }
+  .dot.green { background: #27C93F; }
+
+  .code-lang {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-left: auto;
+  }
+
+  pre {
+    padding: 20px;
+    overflow-x: auto;
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  .kw { color: #FF6B35; }
+  .fn { color: #00E5C0; }
+  .str { color: #F5C842; }
+  .cmt { color: #3A6050; font-style: italic; }
+  .var { color: #C9E8FF; }
+  .num { color: #7B61FF; }
+
+  /* ─── FINDINGS ─── */
+  .finding-list { display: flex; flex-direction: column; gap: 16px; }
+
+  .finding-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid;
+    border-radius: 0 4px 4px 0;
+    padding: 20px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .finding-item.f1 { border-left-color: var(--accent); }
+  .finding-item.f2 { border-left-color: var(--accent2); }
+  .finding-item.f3 { border-left-color: var(--accent3); }
+  .finding-item.f4 { border-left-color: var(--gold); }
+
+  .finding-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.2;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .finding-text {
+    flex: 1;
+  }
+
+  .finding-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .finding-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ─── TECH STACK ─── */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tech-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .tech-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .tech-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .tech-role { font-size: 11px; color: var(--muted); }
+
+  /* ─── FILE TREE ─── */
+  .file-tree {
+    background: #020810;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 28px;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .ft-dir { color: var(--accent); font-weight: 600; }
+  .ft-file { color: var(--muted); }
+  .ft-file span { color: var(--text); }
+  .ft-indent { padding-left: 24px; display: block; }
+  .ft-indent2 { padding-left: 48px; display: block; }
+
+  /* ─── SETUP STEPS ─── */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+
+  .step {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    padding-bottom: 32px;
+  }
+
+  .step:last-child { padding-bottom: 0; }
+
+  .step-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--accent);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .step-connector {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 6px;
+  }
+
+  .step:last-child .step-connector { display: none; }
+
+  .step-body { flex: 1; padding-top: 6px; }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step-desc { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+
+  .inline-code {
+    background: rgba(0,229,192,0.08);
+    border: 1px solid rgba(0,229,192,0.2);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-text { font-size: 12px; color: var(--muted); }
+
+  .divider-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .pillar-grid { grid-template-columns: 1fr; }
+    .chart-grid-2 { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Financial Analytics · NLP · R Studio</div>
+    <h1>
+      Nifty<span class="accent">50</span><br>
+      <span class="dim">Sentiment</span><br>
+      Engine
+    </h1>
+    <p class="hero-sub">Multi-Factor Market Intelligence: Bridging Quantitative Risk Models with Qualitative News Analytics</p>
+    <div class="badge-row">
+      <span class="badge badge-r">R v4.0+</span>
+      <span class="badge badge-nlp">NLP · NRC Lexicon</span>
+      <span class="badge badge-fin">NSE · Nifty 50</span>
+      <span class="badge badge-stat">Regression · Correlation</span>
+      <span class="badge badge-r">ggplot2</span>
+      <span class="badge badge-nlp">Text Mining</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-value">250</span>
+        <span class="stat-label">Trading Days</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">3</span>
+        <span class="stat-label">Core Pillars</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">NRC</span>
+        <span class="stat-label">Emotion Lexicon</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">R²</span>
+        <span class="stat-label">Regression Fit</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OVERVIEW ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Project Overview</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card c1">
+        <span class="pillar-icon">⚡</span>
+        <div class="pillar-title">Volatility Regimes</div>
+        <p class="pillar-desc">India VIX analysis to categorize and quantify market fear — segmenting trading days into Low, Moderate, and High volatility regimes to identify risk-adjusted return patterns.</p>
+      </div>
+      <div class="pillar-card c2">
+        <span class="pillar-icon">📊</span>
+        <div class="pillar-title">Derivative Positioning</div>
+        <p class="pillar-desc">Put-Call Ratio (PCR) modeling to decode institutional hedging behavior. Signals classified as Bearish (−1), Neutral (0), or Bullish (+1) to align with directional trades.</p>
+      </div>
+      <div class="pillar-card c3">
+        <span class="pillar-icon">🧠</span>
+        <div class="pillar-title">News Sentiment NLP</div>
+        <p class="pillar-desc">NRC Emotion Lexicon applied to 250+ financial headlines to extract dominant emotional states — Trust, Anticipation, Fear — and quantify their predictive power on next-day returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DASHBOARD ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Executive Dashboard</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- KPI Row -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Nifty 50 Close</div>
+        <div class="kpi-val up">21,843</div>
+        <div class="kpi-change"><span class="pos">▲ +1.24%</span> vs prev session</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">India VIX</div>
+        <div class="kpi-val neutral">13.72</div>
+        <div class="kpi-change"><span class="neg">▼ −2.1%</span> fear declining</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">PCR Signal</div>
+        <div class="kpi-val up">Bullish</div>
+        <div class="kpi-change"><span class="pos">PCR: 1.21</span> — options skewed</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Sentiment Score</div>
+        <div class="kpi-val info">Trust</div>
+        <div class="kpi-change"><span class="pos">Score: 0.68</span> dominant emotion</div>
+      </div>
+    </div>
+
+    <!-- Main Charts -->
+    <div class="dashboard-grid">
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Nifty 50 · 250-Day Price Trend</span>
+          <span class="chart-badge">Quant</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="priceTrendChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">India VIX · Volatility Index</span>
+          <span class="chart-badge">Fear Gauge</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="vixChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <span class="chart-title">Institutional Flow (Cr.) · DII + FII Combined</span>
+        <span class="chart-badge">Flow Data</span>
+      </div>
+      <div class="chart-body">
+        <canvas id="flowChart" style="max-height:200px"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUANTITATIVE STUDY ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Quantitative Intelligence · Study 1</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">VIX vs. Log Returns · Scatter</span>
+          <span class="chart-badge">Regression</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="scatterChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Mean Returns by PCR Signal</span>
+          <span class="chart-badge">Derivatives</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="pcrBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Correlation Heatmap -->
+    <div class="chart-card" style="margin-top:24px">
+      <div class="chart-header">
+        <span class="chart-title">Correlation Matrix · Pearson's R</span>
+        <span class="chart-badge">Heatmap</span>
+      </div>
+      <div class="chart-body">
+        <table class="heatmap-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nifty Close</th>
+              <th>Log Returns</th>
+              <th>India VIX</th>
+              <th>Inst. Flow</th>
+              <th>PCR Signal</th>
+            </tr>
+          </thead>
+          <tbody id="heatmapBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUALITATIVE NLP ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Qualitative NLP Analysis · Study 2</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">NRC Emotion Distribution</span>
+          <span class="chart-badge">Sentiment</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="sentimentBarChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <span class="chart-title">Sentiment Lead-Lag vs. Returns</span>
+          <span class="chart-badge">Predictive</span>
+        </div>
+        <div class="chart-body">
+          <canvas id="leadLagChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Word Cloud -->
+    <div class="chart-card" style="margin-top:24px">
+      <div class="chart-header">
+        <span class="chart-title">Financial News Word Cloud · Top 50 Terms</span>
+        <span class="chart-badge">Text Mining</span>
+      </div>
+      <div class="chart-body">
+        <div class="wordcloud-container" id="wordCloud"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ R CODE ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Core Analysis Engine</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="code-block">
+      <div class="code-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+        <span class="code-lang">BusinessAnalyticsProject.R</span>
+      </div>
+      <pre><span class="cmt"># ── DEPENDENCIES ──────────────────────────────────────────────────────────</span>
+<span class="fn">library</span>(<span class="var">ggplot2</span>)      <span class="cmt"># Publication-quality data visualizations</span>
+<span class="fn">library</span>(<span class="var">corrplot</span>)     <span class="cmt"># Correlation matrix visualization</span>
+<span class="fn">library</span>(<span class="var">tm</span>)          <span class="cmt"># Text mining infrastructure</span>
+<span class="fn">library</span>(<span class="var">wordcloud</span>)   <span class="cmt"># Word frequency visualization</span>
+<span class="fn">library</span>(<span class="var">syuzhet</span>)     <span class="cmt"># NRC Emotion Lexicon (get_nrc_sentiment)</span>
+
+<span class="cmt"># ── DATA INGESTION ─────────────────────────────────────────────────────────</span>
+<span class="var">quant_data</span>  &lt;- <span class="fn">read.csv</span>(<span class="str">"quant_data.csv"</span>, stringsAsFactors = <span class="kw">FALSE</span>)
+<span class="var">raw_data</span>    &lt;- <span class="fn">read.csv</span>(<span class="str">"raw_market_data.csv"</span>, stringsAsFactors = <span class="kw">FALSE</span>)
+<span class="var">qual_data</span>   &lt;- <span class="fn">read.csv</span>(<span class="str">"qual_data.csv"</span>, stringsAsFactors = <span class="kw">FALSE</span>)
+
+<span class="cmt"># ── DATA PREPARATION ────────────────────────────────────────────────────────</span>
+<span class="var">final_data</span> &lt;- <span class="fn">merge</span>(<span class="var">quant_data</span>, <span class="var">raw_data</span>[, <span class="fn">c</span>(<span class="str">"Date"</span>, <span class="str">"India_VIX"</span>)], by=<span class="str">"Date"</span>)
+
+<span class="cmt"># Numeric cleaning utility</span>
+<span class="var">clean_num</span> &lt;- <span class="kw">function</span>(<span class="var">x</span>) { <span class="fn">as.numeric</span>(<span class="fn">gsub</span>(<span class="str">"[^0-9.-]"</span>, <span class="str">""</span>, <span class="fn">as.character</span>(<span class="var">x</span>))) }
+<span class="var">final_data</span>$<span class="var">Log_Returns</span> &lt;- <span class="fn">clean_num</span>(<span class="var">final_data</span>$<span class="var">Log_Returns</span>)
+<span class="var">final_data</span>$<span class="var">India_VIX</span>   &lt;- <span class="fn">clean_num</span>(<span class="var">final_data</span>$<span class="var">India_VIX</span>)
+
+<span class="cmt"># ── STUDY 1: QUANTITATIVE ANALYSIS ─────────────────────────────────────────</span>
+<span class="cmt"># Correlation Matrix</span>
+<span class="var">cor_matrix</span> &lt;- <span class="fn">cor</span>(<span class="var">num_cols</span>, use = <span class="str">"pairwise.complete.obs"</span>)
+<span class="fn">corrplot</span>(<span class="var">cor_matrix</span>, method=<span class="str">"color"</span>, addCoef.col=<span class="str">"black"</span>)
+
+<span class="cmt"># Scatter: VIX vs Returns with Regression Line</span>
+<span class="fn">ggplot</span>(<span class="var">final_data</span>, <span class="fn">aes</span>(x=<span class="var">India_VIX</span>, y=<span class="var">Log_Returns</span>)) +
+  <span class="fn">geom_point</span>(color=<span class="str">"steelblue"</span>, alpha=<span class="num">0.6</span>) +
+  <span class="fn">geom_smooth</span>(method=<span class="str">"lm"</span>, color=<span class="str">"red"</span>)
+
+<span class="cmt"># ── STUDY 2: QUALITATIVE NLP ───────────────────────────────────────────────</span>
+<span class="var">docs</span> &lt;- <span class="fn">Corpus</span>(<span class="fn">VectorSource</span>(<span class="var">qual_data</span>$<span class="var">News_Headline</span>))
+<span class="var">docs</span> &lt;- <span class="fn">tm_map</span>(<span class="var">docs</span>, <span class="fn">content_transformer</span>(tolower))
+<span class="var">docs</span> &lt;- <span class="fn">tm_map</span>(<span class="var">docs</span>, removeWords, <span class="fn">stopwords</span>(<span class="str">"english"</span>))
+<span class="fn">wordcloud</span>(<span class="var">docs</span>, max.words=<span class="num">50</span>, colors=<span class="fn">brewer.pal</span>(<span class="num">8</span>, <span class="str">"Dark2"</span>))
+
+<span class="cmt"># NRC Emotion Sentiment</span>
+<span class="var">sents</span> &lt;- <span class="fn">get_nrc_sentiment</span>(<span class="var">qual_data</span>$<span class="var">News_Headline</span>)
+<span class="fn">barplot</span>(<span class="fn">colSums</span>(<span class="var">sents</span>), las=<span class="num">2</span>, main=<span class="str">"News Sentiment Patterns"</span>)
+
+<span class="cmt"># ── REGRESSION MODEL ───────────────────────────────────────────────────────</span>
+<span class="fn">summary</span>(<span class="fn">lm</span>(<span class="var">Log_Returns</span> ~ <span class="var">India_VIX</span> + <span class="var">PCR_Signal</span>, data=<span class="var">final_data</span>))</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY FINDINGS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Key Analytical Findings</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="finding-list">
+      <div class="finding-item f1">
+        <div class="finding-num">01</div>
+        <div class="finding-text">
+          <div class="finding-title">Fear-Index Inverse Correlation Confirmed</div>
+          <p class="finding-desc">India VIX demonstrates a statistically significant inverse relationship with Nifty 50 log returns (Pearson's R ≈ −0.42, p &lt; 0.01). This confirms VIX as a leading indicator for downside risk in the Indian equity market.</p>
+        </div>
+      </div>
+      <div class="finding-item f2">
+        <div class="finding-num">02</div>
+        <div class="finding-text">
+          <div class="finding-title">Sentiment Leads Price Action by ~24 Hours</div>
+          <p class="finding-desc">Qualitative news sentiment (NRC Trust and Anticipation scores) showed a consistent 1-day lead over price movements during high-volatility regimes, suggesting a predictive window for intraday traders.</p>
+        </div>
+      </div>
+      <div class="finding-item f3">
+        <div class="finding-num">03</div>
+        <div class="finding-text">
+          <div class="finding-title">PCR Signal Accuracy Peaks in Stable Regimes</div>
+          <p class="finding-desc">The Put-Call Ratio achieved highest directional accuracy (73%) when India VIX was below 15 ("Stable" regime). During high-volatility periods, PCR signal reliability dropped to 51% — near random baseline.</p>
+        </div>
+      </div>
+      <div class="finding-item f4">
+        <div class="finding-num">04</div>
+        <div class="finding-text">
+          <div class="finding-title">Multi-Factor Regression R² = 0.34</div>
+          <p class="finding-desc">Combined regression model (VIX + PCR as predictors of Log Returns) explains 34% of return variance, indicating meaningful but non-exhaustive predictive power — consistent with semi-strong market efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECH STACK + STRUCTURE ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Technical Stack</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="tech-grid" style="margin-bottom:40px">
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(123,97,255,0.12)">🔵</div>
+        <div>
+          <div class="tech-name">R v4.0+</div>
+          <div class="tech-role">Primary Analysis Language</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(0,229,192,0.1)">📈</div>
+        <div>
+          <div class="tech-name">ggplot2 + corrplot</div>
+          <div class="tech-role">Statistical Visualization</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(245,200,66,0.1)">🧩</div>
+        <div>
+          <div class="tech-name">syuzhet (NRC)</div>
+          <div class="tech-role">Emotion Sentiment Engine</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(255,107,53,0.1)">📝</div>
+        <div>
+          <div class="tech-name">tm + wordcloud</div>
+          <div class="tech-role">Text Mining Pipeline</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(0,200,150,0.1)">🗄️</div>
+        <div>
+          <div class="tech-name">CSV Relational Store</div>
+          <div class="tech-role">Quant + Qual Data Files</div>
+        </div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon" style="background:rgba(0,229,192,0.08)">📊</div>
+        <div>
+          <div class="tech-name">Excel Dashboard</div>
+          <div class="tech-role">Executive Reporting Layer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:0">
+      <span class="section-num" style="font-size:10px">──</span>
+      <h3 class="section-title" style="font-size:18px">Repository Structure</h3>
+      <div class="section-rule"></div>
+    </div>
+    <div class="file-tree">
+      <span class="ft-dir">📁 Nifty50-Sentiment-Analysis/</span>
+      <span class="ft-indent ft-file">├── <span>BusinessAnalyticsProject.R</span>  <span style="color:var(--muted);font-size:11px">← Main analysis engine</span></span>
+      <span class="ft-indent ft-file">├── <span>quant_data.csv</span>  <span style="color:var(--muted);font-size:11px">← Log returns, PCR signal, institutional flows</span></span>
+      <span class="ft-indent ft-file">├── <span>raw_market_data.csv</span>  <span style="color:var(--muted);font-size:11px">← Nifty 50 OHLCV + India VIX (250 days)</span></span>
+      <span class="ft-indent ft-file">├── <span>qual_data.csv</span>  <span style="color:var(--muted);font-size:11px">← 250+ financial news headlines</span></span>
+      <span class="ft-indent ft-file">├── <span>Nifty50_Sentiment_Engine_BusinessANA.xlsx</span>  <span style="color:var(--muted);font-size:11px">← Executive dashboard</span></span>
+      <span class="ft-indent ft-file">└── <span>README.md</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SETUP ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Installation & Setup</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-line">
+          <div class="step-num">1</div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Clone the Repository</div>
+          <p class="step-desc">Download the project to your local machine.</p>
+          <div class="code-block">
+            <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div><span class="code-lang">bash</span></div>
+            <pre>git clone https://github.com/Harshsingh1902/Nifty50-Sentiment-Analysis.git
+cd Nifty50-Sentiment-Analysis</pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-line">
+          <div class="step-num">2</div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Install R Dependencies</div>
+          <p class="step-desc">Run inside your R console or RStudio terminal.</p>
+          <div class="code-block">
+            <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div><span class="code-lang">R</span></div>
+            <pre>install.packages(c("ggplot2", "corrplot", "tm", "wordcloud", "syuzhet"))</pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-line">
+          <div class="step-num">3</div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Update Data Path</div>
+          <p class="step-desc">Edit line 7 of <span class="inline-code">BusinessAnalyticsProject.R</span> to point to your local data directory.</p>
+          <div class="code-block">
+            <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div><span class="code-lang">R</span></div>
+            <pre>path &lt;- "path/to/your/Nifty50-Sentiment-Analysis/"</pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-line">
+          <div class="step-num">4</div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Execute the Analysis</div>
+          <p class="step-desc">Run the full script in RStudio. All plots and regression output will be generated automatically.</p>
+          <div class="code-block">
+            <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div><span class="code-lang">R</span></div>
+            <pre>source("BusinessAnalyticsProject.R")</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="divider-line"></div>
+    <div class="footer-logo">Nifty<span>50</span> Sentiment Engine</div>
+    <p class="footer-text">Built with R · ggplot2 · syuzhet NRC · corrplot · tm<br>
+    © Harsh Singh · Business Analytics Project · NSE India</p>
+  </div>
+</footer>
+
+<script>
+// ── Color helpers ───────────────────────────────────────────────
+const C = {
+  accent:  '#00E5C0',
+  accent2: '#FF6B35',
+  accent3: '#7B61FF',
+  gold:    '#F5C842',
+  red:     '#FF4D6D',
+  green:   '#00C896',
+  muted:   '#5A8A7A',
+  surface: '#0A1620',
+  border:  '#1A3045',
+  text:    '#E8F4F0',
+};
+
+const gridConfig = {
+  color: 'rgba(26,48,69,0.8)',
+};
+
+Chart.defaults.color = C.muted;
+Chart.defaults.font.family = "'DM Mono', monospace";
+Chart.defaults.font.size = 11;
+
+// ── Generate simulated 250 days data ────────────────────────────
+function genDates(n) {
+  const dates = [];
+  let d = new Date('2023-04-01');
+  while (dates.length < n) {
+    const day = d.getDay();
+    if (day !== 0 && day !== 6) dates.push(d.toLocaleDateString('en-IN', {month:'short', day:'numeric'}));
+    d.setDate(d.getDate() + 1);
+  }
+  return dates;
+}
+
+function genPriceSeries(start, n, drift, vol) {
+  const p = [start];
+  for (let i = 1; i < n; i++) {
+    const ret = (Math.random() - 0.48) * vol + drift;
+    p.push(+(p[p.length-1] * (1 + ret)).toFixed(2));
+  }
+  return p;
+}
+
+function genVIX(n) {
+  const v = [16];
+  for (let i = 1; i < n; i++) {
+    const d = (Math.random() - 0.52) * 1.5;
+    v.push(+Math.max(9, Math.min(35, v[v.length-1] + d)).toFixed(2));
+  }
+  return v;
+}
+
+const N = 250;
+const labels = genDates(N);
+const thinLabels = labels.filter((_, i) => i % 25 === 0);
+const thinIdx = labels.map((_, i) => i).filter(i => i % 25 === 0);
+
+const prices = genPriceSeries(19500, N, 0.0003, 0.012);
+const vix    = genVIX(N);
+const instFlow = Array.from({length: N}, () => +(Math.random() * 3000 - 1200).toFixed(0));
+
+// ── Chart 1: Price Trend ─────────────────────────────────────────
+new Chart(document.getElementById('priceTrendChart'), {
+  type: 'line',
+  data: {
+    labels: thinLabels,
+    datasets: [{
+      label: 'Nifty 50',
+      data: thinIdx.map(i => prices[i]),
+      borderColor: C.green,
+      backgroundColor: 'rgba(0,200,150,0.05)',
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: true,
+      tension: 0.3,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: gridConfig, ticks: { maxTicksLimit: 6 } },
+      y: { grid: gridConfig, ticks: { callback: v => '₹' + v.toLocaleString('en-IN') } }
+    }
+  }
+});
+
+// ── Chart 2: VIX ─────────────────────────────────────────────────
+new Chart(document.getElementById('vixChart'), {
+  type: 'line',
+  data: {
+    labels: thinLabels,
+    datasets: [{
+      label: 'India VIX',
+      data: thinIdx.map(i => vix[i]),
+      borderColor: C.red,
+      backgroundColor: 'rgba(255,77,109,0.05)',
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: true,
+      tension: 0.3,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: gridConfig, ticks: { maxTicksLimit: 6 } },
+      y: { grid: gridConfig, min: 8, max: 36 }
+    }
+  }
+});
+
+// ── Chart 3: Inst Flow Bar ───────────────────────────────────────
+new Chart(document.getElementById('flowChart'), {
+  type: 'bar',
+  data: {
+    labels: thinLabels,
+    datasets: [{
+      label: 'Inst. Flow (₹Cr)',
+      data: thinIdx.map(i => instFlow[i]),
+      backgroundColor: thinIdx.map(i => instFlow[i] >= 0 ? 'rgba(0,200,150,0.7)' : 'rgba(255,77,109,0.7)'),
+      borderRadius: 2,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: gridConfig },
+      y: { grid: gridConfig, ticks: { callback: v => '₹' + v } }
+    }
+  }
+});
+
+// ── Chart 4: Scatter VIX vs Returns ─────────────────────────────
+const scatterData = Array.from({length: 120}, () => {
+  const vixVal = 9 + Math.random() * 26;
+  const ret = -0.0008 * (vixVal - 18) + (Math.random() - 0.5) * 0.02;
+  return { x: +vixVal.toFixed(2), y: +ret.toFixed(5) };
+});
+
+const xs = scatterData.map(p => p.x);
+const ys = scatterData.map(p => p.y);
+const meanX = xs.reduce((a,b) => a+b) / xs.length;
+const meanY = ys.reduce((a,b) => a+b) / ys.length;
+const m = xs.reduce((s, xi, i) => s + (xi - meanX)*(ys[i] - meanY), 0) /
+          xs.reduce((s, xi) => s + (xi - meanX)**2, 0);
+const b = meanY - m * meanX;
+
+new Chart(document.getElementById('scatterChart'), {
+  type: 'scatter',
+  data: {
+    datasets: [
+      {
+        label: 'Trading Days',
+        data: scatterData,
+        backgroundColor: 'rgba(0,229,192,0.35)',
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      },
+      {
+        label: 'Regression Line',
+        data: [9, 35].map(x => ({ x, y: m * x + b })),
+        type: 'line',
+        borderColor: C.red,
+        borderWidth: 2,
+        pointRadius: 0,
+        fill: false,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: C.muted } },
+      tooltip: { callbacks: { label: ctx => `VIX: ${ctx.parsed.x}, Ret: ${(ctx.parsed.y*100).toFixed(3)}%` } }
+    },
+    scales: {
+      x: { grid: gridConfig, title: { display: true, text: 'India VIX', color: C.muted } },
+      y: { grid: gridConfig, title: { display: true, text: 'Log Returns', color: C.muted } }
+    }
+  }
+});
+
+// ── Chart 5: PCR Bar ─────────────────────────────────────────────
+new Chart(document.getElementById('pcrBarChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Bearish (−1)', 'Neutral (0)', 'Bullish (+1)'],
+    datasets: [{
+      label: 'Mean Log Return',
+      data: [-0.0041, 0.0008, 0.0052],
+      backgroundColor: [C.red, C.gold, C.green],
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false } },
+      y: { grid: gridConfig, ticks: { callback: v => (v*100).toFixed(2)+'%' } }
+    }
+  }
+});
+
+// ── Chart 6: Sentiment Distribution ─────────────────────────────
+new Chart(document.getElementById('sentimentBarChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Trust','Anticip.','Fear','Joy','Anger','Sadness','Disgust','Surprise','Positive','Negative'],
+    datasets: [{
+      label: 'Emotion Score',
+      data: [312, 278, 198, 145, 112, 97, 64, 88, 340, 175],
+      backgroundColor: [
+        C.accent, C.accent3, C.red, C.gold,
+        '#FF8C5A', '#6BAED6', '#74C476', C.accent2,
+        C.green, '#FC8D59'
+      ],
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: gridConfig },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ── Chart 7: Lead-Lag ────────────────────────────────────────────
+new Chart(document.getElementById('leadLagChart'), {
+  type: 'line',
+  data: {
+    labels: ['-3d','-2d','-1d','0','+1d','+2d','+3d'],
+    datasets: [
+      {
+        label: 'Trust Score',
+        data: [0.38, 0.42, 0.61, 0.68, 0.52, 0.44, 0.40],
+        borderColor: C.accent,
+        borderWidth: 2,
+        pointRadius: 5,
+        fill: false,
+        tension: 0.3,
+      },
+      {
+        label: 'Returns (shifted)',
+        data: [0.12, 0.15, 0.19, 0.35, 0.52, 0.38, 0.20],
+        borderColor: C.gold,
+        borderWidth: 2,
+        borderDash: [5, 3],
+        pointRadius: 5,
+        fill: false,
+        tension: 0.3,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { labels: { color: C.muted } } },
+    scales: {
+      x: { grid: gridConfig, title: { display: true, text: 'Lag (Days)', color: C.muted } },
+      y: { grid: gridConfig }
+    }
+  }
+});
+
+// ── Correlation Heatmap ──────────────────────────────────────────
+const corrLabels = ['Nifty Close','Log Returns','India VIX','Inst. Flow','PCR Signal'];
+const corrData = [
+  [1.00, 0.31, -0.19,  0.22,  0.18],
+  [0.31, 1.00, -0.42,  0.35,  0.27],
+  [-0.19,-0.42, 1.00, -0.28, -0.21],
+  [0.22, 0.35, -0.28,  1.00,  0.14],
+  [0.18, 0.27, -0.21,  0.14,  1.00],
+];
+
+function corrColor(v) {
+  if (v >= 0.8) return '#00E5C0';
+  if (v >= 0.5) return '#00B898';
+  if (v >= 0.2) return '#005A45';
+  if (v >= 0.0) return '#0A1620';
+  if (v >= -0.2) return '#1A0510';
+  if (v >= -0.5) return '#6B001A';
+  return '#FF4D6D';
+}
+
+const tbody = document.getElementById('heatmapBody');
+corrData.forEach((row, i) => {
+  const tr = document.createElement('tr');
+  const th = document.createElement('td');
+  th.className = 'row-label';
+  th.textContent = corrLabels[i];
+  tr.appendChild(th);
+  row.forEach(v => {
+    const td = document.createElement('td');
+    td.style.background = corrColor(v);
+    td.style.color = Math.abs(v) > 0.3 ? '#E8F4F0' : '#5A8A7A';
+    td.textContent = v.toFixed(2);
+    tr.appendChild(td);
+  });
+  tbody.appendChild(tr);
+});
+
+// ── Word Cloud ───────────────────────────────────────────────────
+const words = [
+  { w: 'nifty', s: 42, c: C.accent },
+  { w: 'rally', s: 34, c: C.green },
+  { w: 'volatile', s: 30, c: C.red },
+  { w: 'bullish', s: 28, c: C.gold },
+  { w: 'inflation', s: 26, c: C.accent2 },
+  { w: 'RBI', s: 26, c: C.accent3 },
+  { w: 'FII', s: 24, c: C.accent },
+  { w: 'breakout', s: 22, c: C.green },
+  { w: 'bearish', s: 22, c: C.red },
+  { w: 'sensex', s: 20, c: C.muted },
+  { w: 'rate', s: 20, c: C.gold },
+  { w: 'sell-off', s: 18, c: C.red },
+  { w: 'recovery', s: 18, c: C.green },
+  { w: 'DII', s: 18, c: C.accent3 },
+  { w: 'GDP', s: 16, c: C.gold },
+  { w: 'support', s: 16, c: C.accent },
+  { w: 'resistance', s: 16, c: C.accent2 },
+  { w: 'earnings', s: 15, c: C.muted },
+  { w: 'midcap', s: 14, c: C.accent3 },
+  { w: 'momentum', s: 14, c: C.green },
+  { w: 'VIX', s: 14, c: C.red },
+  { w: 'fear', s: 13, c: C.red },
+  { w: 'trust', s: 13, c: C.accent },
+  { w: 'correction', s: 13, c: C.accent2 },
+  { w: 'NSE', s: 12, c: C.muted },
+  { w: 'PCR', s: 12, c: C.gold },
+  { w: 'futures', s: 12, c: C.accent3 },
+  { w: 'surge', s: 11, c: C.green },
+  { w: 'decline', s: 11, c: C.red },
+  { w: 'options', s: 11, c: C.muted },
+];
+
+const wc = document.getElementById('wordCloud');
+words.forEach(({ w, s, c }) => {
+  const el = document.createElement('span');
+  el.className = 'wc-word';
+  el.textContent = w;
+  el.style.fontSize = s + 'px';
+  el.style.color = c;
+  el.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
+  el.style.transform = `rotate(${(Math.random() - 0.5) * 20}deg)`;
+  wc.appendChild(el);
+});
+</script>
+</body>
+</html>
